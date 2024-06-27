@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.inventory-container {
+  background-image: url('/inventoryBackground.png'); /* Example background image */
+  font-family: 'Press Start 2P', cursive; /* Example font */
+}
+
+.inventory-item {
+  background-image: url('/itemBackground.jpg'); /* Example item background image */
+}
