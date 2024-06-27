@@ -2,11 +2,11 @@
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
 import { useFrame, extend, useThree } from '@react-three/fiber';
-import { PlaneGeometry, TextureLoader, Mesh, MeshStandardMaterial, RepeatWrapping } from 'three';
+import { BoxGeometry, TextureLoader, Mesh, MeshStandardMaterial, RepeatWrapping } from 'three';
 import { useLoader } from '@react-three/fiber';
 
 // Extend the Three.js namespace with PlaneGeometry
-extend({ PlaneGeometry });
+extend({ BoxGeometry });
 
 const Road = () => {
   // Create a reference for the road mesh with the correct type
@@ -24,7 +24,7 @@ const Road = () => {
       if (tex) {
         tex.wrapS = RepeatWrapping;
         tex.wrapT = RepeatWrapping;
-        tex.repeat.set(78, 3); // Adjust repeat values as needed
+        tex.repeat.set(30, 10); // Adjust repeat values as needed
       }
     });
   }, [texture, normalMap, roughnessMap, aoMap]);
@@ -50,9 +50,9 @@ const Road = () => {
   });
 
   return (
-    <mesh ref={roadRef} rotation={[-Math.PI / 4.5, -0.2, 0.2]} position={[5, -4, -11]}>
+    <mesh ref={roadRef} rotation={[-Math.PI / 2.3, -0.2, 0.7]} position={[0, -6.5, -11]}>
       {/* Define the plane geometry for the road, extending the width based on the canvas size */}
-      <planeGeometry args={[size.width / 10, 4]} />
+      <boxGeometry args={[size.width / 10, 4.5, 3]} />
       {/* Apply the texture to the material */}
       <meshStandardMaterial
         attach="material"
