@@ -16,33 +16,32 @@ interface GLTFResult {
 
 // define the funtional component Character that takes the callback function onClickHead as a prop that returns nothing.-> generic type.
 const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
-  // create a ref for THREE.Group with initial value null.
-  //later i can assign the value with group.current = value (it shoud be type THREE.Group)
+  // create a mutable object that persists across renders. The .current property of the ref can hold any value, and it persist between renders. like i can assign manually like ref.current = scene. but in this project, useAnimations() hook will internally assign it.
   const group = useRef<THREE.Group>(null);
 
-  // Load the GLTF model and animations using useGLTF hook
-  const { scene, animations } = useGLTF('/models/boy/scene.gltf') as unknown as GLTFResult;
+  // Load the GLTF model(scene) and animations using useGLTF hook
+  const { scene, animations } = useGLTF('/models/boy/scene.gltf') as unknown as GLTFResult; //-> this is the interface defined
 
   // Extract animations and actions from the loaded animations
   const { actions } = useAnimations(animations, group);
 
-  // Get the current camera and WebGL renderer instance from the useThree hook
+  // Get the current camera and WebGL renderer(API that renders directly within web browser) instance from the useThree hook
   const { camera, gl } = useThree();
 
-  // Create a reference for the head bounding box
+  // Create a reference for the head bounding box holding the THREE.mesh object.
   const headBoxRef = useRef<THREE.Mesh>(null);
 
   // Effect hook to handle animation and click events
   useEffect(() => {
     // Function to play animations in sequence
     const playNextAnimation = (index: number) => {
-      // List of animation names and their durations
+      // define the key-value pair object for the animation name and duration.
       const animationDurations: { [key: string]: number } = {
         "Controls|NormalWalk": 7000, // 7 seconds
         "Controls|JumpCycle": 3000,  // 3 seconds
       };
 
-      // Get the list of valid animation names
+      // returns ["Controls|NormalWalk", "Controls|JumpCycle"]
       const filteredActionNames = Object.keys(animationDurations);
 
       // Ensure animation index stays within bounds
@@ -52,7 +51,9 @@ const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
 
       // Retrieve the action and play it
       const actionName = filteredActionNames[index];
+      //retreive the specific animation object.
       const action = actions[actionName];
+      //if action exist, reset, fade in and play.
       if (action) {
         action.reset().fadeIn(0.5).play();
       } else {
@@ -64,11 +65,12 @@ const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
         if (action) {
           action.fadeOut(0.5);
         }
+        //recursive loop till all the animation is played.
         playNextAnimation(index + 1);
-      }, animationDurations[actionName]);
+      }, animationDurations[actionName]);//-> after 7 seconds.
     };
 
-    // Start playing animations from the beginning
+    // Start playing animations from the beginning and keep recursive loop.
     playNextAnimation(0);
 
     // Function to handle mouse click on the head
