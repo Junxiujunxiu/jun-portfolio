@@ -7,8 +7,11 @@ import Road from '../components/Road';
 import Character from '../components/Character';
 import '../style.css';
 
+//it returns null, the purpose is soley to perform setup actions related to camera
 const SetCamera = () => {
+  //object destructuring-> only assign the returned camera property to the variable camera, so i don't need to use camera.camera
   const { camera } = useThree();
+  //side effects-> runs when the component mounts or camera object changes.
   useEffect(() => {
     camera.position.set(0, 5, 10);
     camera.lookAt(0, 0, 0);
@@ -16,6 +19,7 @@ const SetCamera = () => {
   return null;
 };
 
+//even if it does not accep props, it specifies that i can accept props by using React.FC -> functional component-> type script feature.
 const Inventory: React.FC = () => {
   return (
     <div className="inventory-container absolute top-10 left-10 p-5 rounded-lg shadow-lg z-10 max-w-sm w-full">
@@ -33,6 +37,7 @@ const Inventory: React.FC = () => {
 export default function Home() {
   const [showInventory, setShowInventory] = useState(false);
 
+  //when the head is clicked, set ShowInventory to true and renders inventory below.
   const handleClickHead = () => {
     setShowInventory(!showInventory);
   };
@@ -50,7 +55,8 @@ export default function Home() {
           <OrbitControls />
         </Canvas>
       </div>
-      {showInventory && <Inventory />}
+       {/* when showInventory is true, renders Inventory */}
+      {showInventory && <Inventory />} 
     </main>
   );
 }
