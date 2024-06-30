@@ -5,6 +5,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import Road from '../components/Road';
 import Character from '../components/Character';
+import Inventory from '../components/Inventory';
 import '../style.css';
 
 //it returns null, the purpose is soley to perform setup actions related to camera
@@ -19,25 +20,9 @@ const SetCamera = () => {
   return null;
 };
 
-//even if it does not accep props, it specifies that i can accept props by using React.FC -> functional component-> type script feature.
-const Inventory: React.FC = () => {
-  return (
-    <div className="inventory-container absolute top-10 left-10 p-5 rounded-lg shadow-lg z-10 max-w-sm w-full">
-      <h3 className="text-2xl font-bold mb-4 text-center text--800">My Projects</h3>
-      <ul className="list-none p-0 m-0">
-        <li className="inventory-item mb-2 p-3 rounded-md shadow-sm cursor-pointer hover:bg-gray-200 transition-all">Project 1</li>
-        <li className="inventory-item mb-2 p-3 rounded-md shadow-sm cursor-pointer hover:bg-gray-200 transition-all">Project 2</li>
-        <li className="inventory-item mb-2 p-3 rounded-md shadow-sm cursor-pointer hover:bg-gray-200 transition-all">Project 3</li>
-        {/* Add more projects here */}
-      </ul>
-    </div>
-  );
-};
-
-export default function Home() {
+const Home: React.FC = () => {
   const [showInventory, setShowInventory] = useState(false);
 
-  //when the head is clicked, set ShowInventory to true and renders inventory below.
   const handleClickHead = () => {
     setShowInventory(!showInventory);
   };
@@ -53,10 +38,11 @@ export default function Home() {
           <Character onClickHead={handleClickHead} />
           <Road />
           <OrbitControls />
+          {showInventory && <Inventory />}
         </Canvas>
       </div>
-       {/* when showInventory is true, renders Inventory */}
-      {showInventory && <Inventory />} 
     </main>
   );
-}
+};
+
+export default Home;

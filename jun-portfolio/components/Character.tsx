@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import { useThree, extend } from '@react-three/fiber';
+import Inventory from './Inventory';
 //import the entire Three.js library and assigning it to the 'THREE' object, making everything accessible via the THREE
 import * as THREE from 'three';
 
@@ -14,8 +15,13 @@ interface GLTFResult {
   animations: THREE.AnimationClip[];  // property animation of type THREE.animationClip array.
 }
 
+//seperate the props
+interface CharacterProps {
+  onClickHead: () => void;
+}
+
 // define the funtional component Character that takes the callback function onClickHead as a prop that returns nothing.-> generic type.
-const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
+const Character: React.FC<CharacterProps> = ({ onClickHead }) => {
   // create a mutable object that persists across renders. The .current property of the ref can hold any value, and it persist between renders. like i can assign manually like ref.current = scene. but in this project, useAnimations() hook will internally assign it.
   const group = useRef<THREE.Group>(null);
 
@@ -30,6 +36,9 @@ const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
 
   // Create a reference for the head bounding box holding the THREE.mesh object.
   const headBoxRef = useRef<THREE.Mesh>(null);
+
+  //added state hook here-------------
+  const [showInventory, setShowInventory] = useState(false);
 
   // Effect hook to handle animation and click events
   useEffect(() => {
@@ -94,6 +103,7 @@ const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
       const intersects = raycaster.intersectObject(headBoxRef.current!, true); //->! not null operator saying am sure it is not null.
       if (intersects.length > 0) {
         onClickHead();  // Execute onClickHead callback if head is clicked
+        setShowInventory(!showInventory); //set it true when clicked
       }
     };
 
@@ -118,8 +128,9 @@ const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
       <primitive object={scene} />  {/* render three.js object directly into ract component tree, making it part of UI */}
       <mesh ref={headBoxRef} position={[-0.4, 2, 0]}>  {/* Head bounding box */}
         <boxGeometry args={[1, 1, 1]} />  {/* it defines the shape of the mesh with dimension */}
-        <meshBasicMaterial color="red" opacity={0} transparent={false} />  {/* appearance of the mesh -> set false for visualize and debugging */}
+        <meshBasicMaterial color="red" opacity={0} transparent={true} />  {/* appearance of the mesh -> set false for visualize and debugging */}
       </mesh>
+      {showInventory && <Inventory />} 
     </group>
   );
 };
