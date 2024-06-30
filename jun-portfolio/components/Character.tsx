@@ -75,23 +75,29 @@ const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
 
     // Function to handle mouse click on the head
     const handlePointerDown = (event: MouseEvent) => {
-      // Calculate normalized mouse coordinates
+      // Store the normalized coordinates of the mouse click
       const mouse = new THREE.Vector2();
+      //give the mouse position in pixels related to the window.
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
       // Create a raycaster from the camera and mouse position
+      //like a laser beam to find out which objects in your scene are under a particular point.
       const raycaster = new THREE.Raycaster();
+      //ray starts from camera and extends through the 3d point in the scene that correspondes to the mouses's position
       raycaster.setFromCamera(mouse, camera);
 
       // Check for intersections with the head bounding box
-      const intersects = raycaster.intersectObject(headBoxRef.current!, true);
+      //headBoxRef refer to bounding box in <mesh>
+      //the true will also check all descendant objects of the specified object if the object has nested objects
+      //it returns the array of intersec points
+      const intersects = raycaster.intersectObject(headBoxRef.current!, true); //->! not null operator saying am sure it is not null.
       if (intersects.length > 0) {
         onClickHead();  // Execute onClickHead callback if head is clicked
       }
     };
 
-    // Add event listener for mouse click events
+    // Add event listener for mouse click events to the <canvas> element -> pointerdown -> everytime i click the mouse, it is triggered and checks for intersection in handlePointerDown function and it it is, call the onClickHead and show the inventory.-> refer to the page.tsx <Character>.
     gl.domElement.addEventListener('pointerdown', handlePointerDown);
 
     // Clean up: remove event listener on component unmount
@@ -109,10 +115,10 @@ const Character: React.FC<{ onClickHead: () => void }> = ({ onClickHead }) => {
   // Render the character group and head bounding box
   return (
     <group ref={group} dispose={null} scale={[3, 3, 3]} position={[0, -4.7, -11]} rotation={[0, 2.5, 0]}>
-      <primitive object={scene} />  {/* Render the GLTF scene as a primitive */}
+      <primitive object={scene} />  {/* render three.js object directly into ract component tree, making it part of UI */}
       <mesh ref={headBoxRef} position={[-0.4, 2, 0]}>  {/* Head bounding box */}
-        <boxGeometry args={[1, 1, 1]} />  {/* Box geometry for the head */}
-        <meshBasicMaterial color="red" opacity={0} transparent={true} />  {/* Material for the head box */}
+        <boxGeometry args={[1, 1, 1]} />  {/* it defines the shape of the mesh with dimension */}
+        <meshBasicMaterial color="red" opacity={0} transparent={false} />  {/* appearance of the mesh -> set false for visualize and debugging */}
       </mesh>
     </group>
   );
