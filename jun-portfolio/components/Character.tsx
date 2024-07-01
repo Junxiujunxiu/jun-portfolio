@@ -52,7 +52,8 @@ const Character: React.FC<CharacterProps> = ({ onClickHead }) => {
     perspectiveCamera.near = 1; // Set near clipping plane
     perspectiveCamera.far = 1000; // Set far clipping plane
     perspectiveCamera.fov = 90; // Set field of view
-    perspectiveCamera.position.set(4, 4, 15); // Adjust the camera position
+    perspectiveCamera.position.set(-7, 0, 13.6); // Adjust the camera position
+    
     perspectiveCamera.updateProjectionMatrix(); // Update the camera projection matrix with the new values
   }, [camera]);
 
