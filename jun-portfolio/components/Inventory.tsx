@@ -89,19 +89,19 @@ const Inventory: React.FC = () => {
   };
 
   return (
-    <group ref={matRef} position={[0, 1, 0]}>
+    <group ref={matRef} position={[0, 2.2, 0]}>
       <primitive
         object={matScene}
-        position={[0, 0, -1]} // Adjust the mat position
-        scale={[7, 8, 10]} // Adjust the mat scale
-        rotation={[0.7, 3, 0]} // Adjust the mat rotation
+        position={[0, -3, -1]} // Adjust the mat position
+        scale={[4, 4, 4]} // Adjust the mat scale
+        rotation={[-0.5, 3.2, -0.04]} // Adjust the mat rotation
       />
       <primitive
         object={bookScene}
         ref={bookRef}
-        position={[-4.2, 1.82, -3]} // Adjust the book position
+        position={[-3.2, -1.5, -1]} // Adjust the book position
         scale={[0.8, 0.8, 0.8]} // Adjust the book scale
-        rotation={[0.7, -0.1, 0]} // Adjust the book rotation (rotate 45 degrees around Y-axis)
+        rotation={[1.07, 0.02, -0.3]} // Adjust the book rotation (rotate 45 degrees around Y-axis)
         onPointerOver={handlePointerOver}
         onPointerOut={handlePointerOut}
       />

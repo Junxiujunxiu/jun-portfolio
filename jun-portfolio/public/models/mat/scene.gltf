@@ -3,168 +3,153 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 63,
+      "count": 88,
       "max": [
-        95.91998291015625,
-        56.21030044555664,
-        0.2110554575920105
+        4.855008125305176,
+        0.267518013715744,
+        2.269639015197754
       ],
       "min": [
-        -95.92766571044922,
-        -54.85117721557617,
-        -0.5755547881126404
+        -4.8271098136901855,
+        -0.26928600668907166,
+        -2.269639015197754
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 756,
+      "byteOffset": 1056,
       "componentType": 5126,
-      "count": 63,
+      "count": 88,
       "max": [
-        0.9999987483024597,
-        0.9999763369560242,
+        0.9659289121627808,
+        0.967259407043457,
         1.0
       ],
       "min": [
-        -0.9999964833259583,
-        -0.9999989867210388,
-        -4.8078459258249495e-06
+        -0.9659289121627808,
+        -0.9682733416557312,
+        -1.0
       ],
       "type": "VEC3"
     },
     {
-      "bufferView": 3,
-      "componentType": 5126,
-      "count": 63,
-      "max": [
-        0.0007171164616011083,
-        0.3573620319366455,
-        0.9997400641441345,
-        1.0
-      ],
-      "min": [
-        -0.9999998807907104,
-        -0.5044564008712769,
-        -0.9999087452888489,
-        1.0
-      ],
-      "type": "VEC4"
-    },
-    {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 63,
+      "count": 88,
       "max": [
-        0.9783793091773987,
-        0.588249683380127
+        0.996304988861084,
+        0.9973139762878418
       ],
       "min": [
-        0.02073241025209427,
-        0.029928959906101227
+        0.0036639999598264694,
+        0.10281900316476822
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 300,
+      "count": 156,
       "type": "SCALAR"
     }
   ],
   "asset": {
     "extras": {
-      "author": "National Heritage Administration (https://sketchfab.com/NHA_Asset)",
+      "author": "Thomas Flynn (https://sketchfab.com/nebulousflynn)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/mat-c3d62eaeac8f46da9f4441145194e981",
-      "title": "Mat"
+      "source": "https://sketchfab.com/3d-models/waves-at-matsushima-by-tawaraya-sotatsu-739f33df00e940cd9e963b62f24c48d4",
+      "title": "Waves at Matsushima by Tawaraya Sotatsu 俵屋宗達"
     },
-    "generator": "Sketchfab-15.56.0",
+    "generator": "Sketchfab-15.61.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 1200,
+      "byteLength": 624,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 504,
-      "byteOffset": 1200,
+      "byteLength": 704,
+      "byteOffset": 624,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 1512,
-      "byteOffset": 1704,
+      "byteLength": 2112,
+      "byteOffset": 1328,
       "byteStride": 12,
-      "name": "floatBufferViews",
-      "target": 34962
-    },
-    {
-      "buffer": 0,
-      "byteLength": 1008,
-      "byteOffset": 3216,
-      "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
     }
   ],
   "buffers": [
     {
-      "byteLength": 4224,
-      "uri": "scene.bin"
+      "byteLength": 3440,
+      "uri": "tf.bin"
     }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular"
   ],
   "images": [
     {
-      "uri": "textures/M_Mat_baseColor.png"
+      "uri": "textures/waves_at_matsushima_colour_baseColor.jpeg"
     },
     {
-      "uri": "textures/M_Mat_metallicRoughness.png"
+      "uri": "textures/waves_at_matsushima_colour_metallicRoughness.png"
     },
     {
-      "uri": "textures/M_Mat_normal.png"
+      "uri": "textures/waves_at_matsushima_colour_specularf0.png"
     }
   ],
   "materials": [
     {
-      "doubleSided": true,
-      "name": "M_Mat",
-      "normalTexture": {
-        "index": 2
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 1.0,
+          "specularTexture": {
+            "index": 2
+          }
+        }
       },
+      "name": "waves_at_matsushima_colour",
       "occlusionTexture": {
-        "index": 1
+        "index": 1,
+        "strength": 0.09257576682350853
       },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 0
         },
-        "metallicFactor": 0.0,
+        "metallicFactor": 0.5592424334901752,
         "metallicRoughnessTexture": {
           "index": 1
-        },
-        "roughnessFactor": 0.8755564969255982
+        }
       }
     }
   ],
   "meshes": [
     {
-      "name": "L_M_Mat_0",
+      "name": "Object_0",
       "primitives": [
         {
           "attributes": {
             "NORMAL": 1,
             "POSITION": 0,
-            "TANGENT": 2,
-            "TEXCOORD_0": 3
+            "TEXCOORD_0": 2
           },
-          "indices": 4,
+          "indices": 3,
           "material": 0,
           "mode": 4
         }
@@ -177,17 +162,17 @@
         1
       ],
       "matrix": [
-        1.0,
+        0.5,
         0.0,
         0.0,
         0.0,
         0.0,
-        2.220446049250313e-16,
-        -1.0,
+        1.1102230246251565e-16,
+        -0.5,
         0.0,
         0.0,
-        1.0,
-        2.220446049250313e-16,
+        0.5,
+        1.1102230246251565e-16,
         0.0,
         0.0,
         0.0,
@@ -200,83 +185,11 @@
       "children": [
         2
       ],
-      "matrix": [
-        0.009999999776482582,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.009999999776482582,
-        0.0,
-        0.0,
-        -0.009999999776482582,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "SM_Mat.FBX"
-    },
-    {
-      "children": [
-        3
-      ],
-      "name": "RootNode"
-    },
-    {
-      "children": [
-        4
-      ],
-      "matrix": [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        2.220446049250313e-16,
-        -1.0,
-        0.0,
-        0.0,
-        1.0,
-        2.220446049250313e-16,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "L"
-    },
-    {
-      "children": [
-        5
-      ],
-      "matrix": [
-        1.0,
-        0.0,
-        -0.0,
-        0.0,
-        0.0,
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.5755550861358643,
-        1.0
-      ],
-      "name": "Object_4"
+      "name": "waves-at-matsushima.obj.cleaner.materialmerger.gles"
     },
     {
       "mesh": 0,
-      "name": "L_M_Mat_0"
+      "name": "Object_2"
     }
   ],
   "samplers": [

@@ -1,11 +1,11 @@
 Model Information:
-* title:	Box Boy
-* source:	https://sketchfab.com/3d-models/box-boy-6d87d6204f9d4eb5a05b3500ac69cac0
-* author:	ElPinguinoCoyosaurio (https://sketchfab.com/elcoyotesd)
+* title:	Stylized Low poly Animated Character
+* source:	https://sketchfab.com/3d-models/stylized-low-poly-animated-character-a011a38d65274acf8008939b7d412cb9
+* author:	Karthik Naidu (https://sketchfab.com/Karthik_TS)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Box Boy" (https://sketchfab.com/3d-models/box-boy-6d87d6204f9d4eb5a05b3500ac69cac0) by ElPinguinoCoyosaurio (https://sketchfab.com/elcoyotesd) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Stylized Low poly Animated Character" (https://sketchfab.com/3d-models/stylized-low-poly-animated-character-a011a38d65274acf8008939b7d412cb9) by Karthik Naidu (https://sketchfab.com/Karthik_TS) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

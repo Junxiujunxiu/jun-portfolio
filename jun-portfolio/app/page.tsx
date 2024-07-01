@@ -6,13 +6,12 @@ import { OrbitControls } from '@react-three/drei';
 import Road from '../components/Road';
 import Character from '../components/Character';
 import Inventory from '../components/Inventory';
+import Landscape from '../components/Landscape';
+import Skybox from '../components/Skybox';
 import '../style.css';
 
-//it returns null, the purpose is soley to perform setup actions related to camera
 const SetCamera = () => {
-  //object destructuring-> only assign the returned camera property to the variable camera, so i don't need to use camera.camera
   const { camera } = useThree();
-  //side effects-> runs when the component mounts or camera object changes.
   useEffect(() => {
     camera.position.set(0, 5, 10);
     camera.lookAt(0, 0, 0);
@@ -31,12 +30,14 @@ const Home: React.FC = () => {
     <main className="flex flex-col items-center justify-center min-h-screen p-0 m-0">
       <div className="w-full h-full absolute">
         <Canvas className="w-full h-full">
-          <ambientLight intensity={2} />
-          <directionalLight position={[5, 5, 5]} intensity={3} />
-          <pointLight position={[10, 10, 10]} intensity={2} />
+        <Skybox />
+          <ambientLight intensity={7} />
+          <hemisphereLight args={['#80caff', '#b2b2b2', 0.6]} position={[0, 50, 0]} />
+          <directionalLight position={[80, 40, 80]} intensity={1.5} />
           <SetCamera />
           <Character onClickHead={handleClickHead} />
           <Road />
+          <Landscape />
           <OrbitControls />
           {showInventory && <Inventory />}
         </Canvas>

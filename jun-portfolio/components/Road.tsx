@@ -13,10 +13,10 @@ const Road = () => {
   const roadRef = useRef<Mesh>(null);
 
   //Load the textures ---> Ensure this texture exists in your public folder
-  const texture = useLoader(TextureLoader, '/T_Floor_Brick_BC.png'); // Albedo/Diffuse map
-  const normalMap = useLoader(TextureLoader, '/T_Floor_Cocncrete_01_BC.png'); // Normal map
-  const roughnessMap = useLoader(TextureLoader, '/T_Floor_wood_BC.png'); // Roughness map
-  const aoMap = useLoader(TextureLoader, '/T_Floor_Concrete_02_BC.png'); // Ambient Occlusion map
+  const texture = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Albedo/Diffuse map
+  const normalMap = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Normal map
+  const roughnessMap = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Roughness map
+  const aoMap = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Ambient Occlusion map
   const { size } = useThree(); // Get the size of the canvas
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Road = () => {
       if (tex) {
         tex.wrapS = RepeatWrapping;
         tex.wrapT = RepeatWrapping;
-        tex.repeat.set(30, 10); // Adjust repeat values as needed
+        tex.repeat.set(40, -3); // Adjust repeat values as needed
       }
     });
   }, [texture, normalMap, roughnessMap, aoMap]);
@@ -50,9 +50,9 @@ const Road = () => {
   });
 
   return (
-    <mesh ref={roadRef} rotation={[-Math.PI / 2.3, -0.2, 0.7]} position={[0, -6.5, -11]}>
+    <mesh ref={roadRef} rotation={[-Math.PI / 2.3, -0.2, 0.7]} position={[20, 2.9, -11]}>
       {/* Define the plane geometry for the road, extending the width based on the canvas size */}
-      <boxGeometry args={[size.width / 10, 4.5, 3]} />
+      <boxGeometry args={[size.width / 10, 2, 1]} />
       {/* Apply the texture to the material */}
       <meshStandardMaterial
         attach="material"
