@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
 
-export default function Skybox() {
+const Skybox: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
   const { scene } = useGLTF('/models/skybox/scene.gltf');
-  return <primitive object={scene} />;
-}
+  const sceneRef = useRef<THREE.Object3D>(null);
+
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.visible = isVisible;
+    }
+  }, [isVisible]);
+
+  useFrame(() => {
+    if (sceneRef.current) {
+      sceneRef.current.rotation.y += 0.00001; // Adjust the speed of rotation as needed
+    }
+  });
+
+  return <primitive object={scene} ref={sceneRef} />;
+};
+
+export default Skybox;

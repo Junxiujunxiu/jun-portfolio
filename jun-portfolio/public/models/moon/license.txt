@@ -1,0 +1,11 @@
+Model Information:
+* title:	Crystal Moon Stick
+* source:	https://sketchfab.com/3d-models/crystal-moon-stick-ed2556dabf0f4759a27fbba3b7cdeb05
+* author:	Ray Dima (https://sketchfab.com/JRxRay)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Crystal Moon Stick" (https://sketchfab.com/3d-models/crystal-moon-stick-ed2556dabf0f4759a27fbba3b7cdeb05) by Ray Dima (https://sketchfab.com/JRxRay) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
