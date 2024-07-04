@@ -46,3 +46,19 @@
     opacity: 1;
   }
 }
+
+@font-face {
+  font-family: 'DeerSnow';
+  src: url('/fonts/DeerSnowRegular-nAxR0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-deersnow {
+  font-family: 'DeerSnow', sans-serif;
+}
+
+.navbar:hover .nav-content {
+  display: flex;
+}
+

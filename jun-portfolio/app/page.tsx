@@ -5,12 +5,14 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import Road from '../components/Road';
 import Character from '../components/Character';
+import Dog from '../components/dog';
 import Inventory from '../components/Inventory';
 import Landscape from '../components/Landscape';
 import Skybox from '../components/Skybox';
 import StarrySky from '../components/StarrySky';
 import Sun from '../components/Sun';
 import Moon from '../components/Moon';
+import Navbar from '../components/Navbar';
 import '../style.css';
 
 const SetCamera = () => {
@@ -60,14 +62,16 @@ const Home: React.FC = () => {
           <directionalLight position={[80, 40, 80]} intensity={1.5} />
           <SetCamera />
           <Character onClickHead={handleClickHead} />
+          <Dog />
           <Road />
           <Landscape />
           <Skybox isVisible={!isNight} />
           <StarrySky isVisible={isNight} />
-          <Sun onClick={handleSunClick} />
+          <Sun onClick={handleSunClick} /> 
           <Moon onClick={handleMoonClick} />
           <OrbitControls />
           {showInventory && <Inventory />}
+          <Navbar />
         </Canvas>
       </div>
     </main>
