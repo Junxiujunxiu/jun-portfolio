@@ -62,3 +62,39 @@
   display: flex;
 }
 
+/* style.css */
+.logos-container {
+  position: fixed;
+  top: 5vh; /* Adjust as needed */
+  right: 3vw; /* Adjust as needed */
+  display: grid;
+  gap: 60px;
+  z-index: 50;
+}
+
+.logo {
+  color: #645f5f; /* Light gray color */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+  color: #d6ccc2; /* Cyan color on hover */
+  transform: scale(1.2); /* Scale up on hover */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+.logo.bouncing {
+  animation: bounce 2s infinite;
+}
+

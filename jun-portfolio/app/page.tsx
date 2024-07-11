@@ -13,6 +13,7 @@ import StarrySky from '../components/StarrySky';
 import Sun from '../components/Sun';
 import Moon from '../components/Moon';
 import Navbar from '../components/Navbar';
+import Logos from '../components/Logos';
 import '../style.css';
 
 const SetCamera = () => {
@@ -74,6 +75,7 @@ const Home: React.FC = () => {
           <Navbar />
         </Canvas>
       </div>
+      <Logos />
     </main>
   );
 };
