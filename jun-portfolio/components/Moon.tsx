@@ -1,19 +1,24 @@
 import React from 'react';
-import { useGLTF } from '@react-three/drei';
 
 interface MoonProps {
   onClick: () => void;
 }
 
 const Moon: React.FC<MoonProps> = ({ onClick }) => {
-  const { scene } = useGLTF('/models/moon/scene.gltf');
   return (
-    <primitive
-      object={scene}
+    <img
+      src="/models/moon/night.gif"
+      alt="Moon Animation"
       onClick={onClick}
-      position={[-11, 12.6, -10.4]}
-      rotation={[Math.PI / 8, Math.PI / 8,-8]} // Adjust the rotation as needed
-      scale={[0.4, 0.4, 0.4]} // Adjust the scale as needed
+      style={{
+        position: 'absolute',
+        right: '77%',
+        top: '3%',
+        width: '100px', // Adjust the width as needed
+        height: '100px', // Adjust the height as needed
+        cursor: 'pointer',
+        zIndex: 10 // Ensure the image is above the Canvas
+      }}
     />
   );
 };

@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   });
 
   return (
-    <group ref={navRef} position={[14, 20, 10]}>
+    <group ref={navRef} position={[2, 1, 6]}>
       <Html>
         <div className="navbar">
           <button className="nav-toggle text-black-10 py-2 px-6 rounded border-2 border-white transition-all duration-300 ease-in-out hover:bg-white hover:text-grey-600 font-deersnow">

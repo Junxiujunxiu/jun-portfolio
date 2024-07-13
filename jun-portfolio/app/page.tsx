@@ -68,13 +68,13 @@ const Home: React.FC = () => {
           <Landscape />
           <Skybox isVisible={!isNight} />
           <StarrySky isVisible={isNight} />
-          <Sun onClick={handleSunClick} /> 
-          <Moon onClick={handleMoonClick} />
           <OrbitControls />
           {showInventory && <Inventory />}
           <Navbar />
         </Canvas>
       </div>
+      <Sun onClick={handleSunClick} />
+      <Moon onClick={handleMoonClick} />
       <Logos />
     </main>
   );

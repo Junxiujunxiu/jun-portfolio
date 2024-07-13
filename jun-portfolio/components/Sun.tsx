@@ -1,20 +1,24 @@
 import React from 'react';
-import { useGLTF } from '@react-three/drei';
 
 interface SunProps {
   onClick: () => void;
 }
 
 const Sun: React.FC<SunProps> = ({ onClick }) => {
-  const { scene } = useGLTF('/models/sun/scene.gltf');
-
   return (
-    <primitive
-      object={scene}
+    <img
+      src="/models/sun/day.gif"
+      alt="Sun Animation"
       onClick={onClick}
-      position={[-12, 13, -10]}
-      rotation={[Math.PI / 6, Math.PI / 11, 0]} // Adjust the rotation as needed
-      scale={[0.8, 0.8, 0.8]} // Adjust the scale as needed
+      style={{
+        position: 'absolute',
+        right: '83.5%',
+        top: '2%',
+        width: '100px', // Adjust the width as needed
+        height: '100px', // Adjust the height as needed
+        cursor: 'pointer',
+        zIndex: 10 // Ensure the image is above the Canvas
+      }}
     />
   );
 };
