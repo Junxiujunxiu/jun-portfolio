@@ -7,16 +7,16 @@ const Logos: React.FC = () => {
   return (
     <div className="logos-container">
       <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-        <FaInstagram size={30} className="logo bouncing" />
+        <FaInstagram size={40} className="logo bouncing" />
       </a>
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-        <FaFacebook size={30} className="logo bouncing" />
+        <FaFacebook size={40} className="logo bouncing" />
       </a>
       <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-        <FaLinkedin size={30} className="logo bouncing" />
+        <FaLinkedin size={40} className="logo bouncing" />
       </a>
       <a href="https://www.wechat.com" target="_blank" rel="noopener noreferrer">
-        <SiWechat size={30} className="logo bouncing" />
+        <SiWechat size={40} className="logo bouncing" />
       </a>
     </div>
   );
