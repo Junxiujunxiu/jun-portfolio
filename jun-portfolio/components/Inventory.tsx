@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import * as THREE from 'three';
+import Book from './Book';  // Import the Book component
 
 interface GLTFResult {
   scene: THREE.Group;
@@ -9,101 +10,71 @@ interface GLTFResult {
 
 const Inventory: React.FC = () => {
   const matRef = useRef<THREE.Group>(null);
-  const bookRef = useRef<THREE.Group>(null);
-
   const { scene: matScene } = useGLTF('/models/mat/scene.gltf') as unknown as GLTFResult;
-  const { scene: bookScene, animations: bookAnimations } = useGLTF('/models/book/scene.gltf') as unknown as GLTFResult;
-
   const { actions: matActions } = useAnimations(matScene.animations, matRef);
-  const { actions: bookActions } = useAnimations(bookAnimations, bookRef);
 
-  const [isHovered, setIsHovered] = useState(false);
+  const [matScale, setMatScale] = useState([5, 5, 5]); // Original size
 
   useEffect(() => {
-    console.log('Loaded book animations:', bookAnimations);
-    bookAnimations.forEach(animation => {
-      console.log('Animation name:', animation.name);
-    });
+    const handleResize = () => {
+      const aspectRatio = window.innerWidth / window.innerHeight;
+      const newScale = aspectRatio < 1 ? aspectRatio * 5 : 5; // Adjust scaling factor as needed
+      setMatScale([newScale, newScale, newScale]);
+    };
 
-    if (bookRef.current) {
-      bookRef.current.traverse(child => {
-        if (child instanceof THREE.Mesh) {
-          console.log('Setting userData actions on book mesh', bookActions);
-          child.userData.actions = bookActions;
-          console.log('Updated userData on', child, child.userData);
-        }
-      });
-    }
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial scale based on the initial window size
 
-    // Set initial animation state to closed (assuming the first frame is the closed state)
-    const initialAction = bookActions['Animation'];
-    if (initialAction) {
-      initialAction.play();
-      initialAction.paused = true; // Pause the animation initially
-      initialAction.time = 0; // Set to the initial frame (closed state)
-      console.log('Initial action set to closed state');
-    }
-  }, [bookAnimations, bookActions]);
-
-  const handlePointerOver = (e: THREE.Event) => {
-    console.log('Pointer over book');
-    const book = bookRef.current;
-    if (book) {
-      book.traverse(child => {
-        if (child instanceof THREE.Mesh) {
-          const actions = child.userData.actions as { [key: string]: THREE.AnimationAction };
-          if (actions) {
-            setIsHovered(true);
-            Object.values(actions).forEach(action => {
-              console.log(`Resetting and playing action: ${action.getClip().name}`);
-              action.reset().fadeIn(0.5).play();
-            });
-          } else {
-            console.log('No actions found in userData');
-          }
-        }
-      });
-    }
-  };
-
-  const handlePointerOut = (e: THREE.Event) => {
-    console.log('Pointer out of book');
-    const book = bookRef.current;
-    if (book) {
-      book.traverse(child => {
-        if (child instanceof THREE.Mesh) {
-          const actions = child.userData.actions as { [key: string]: THREE.AnimationAction };
-          if (actions) {
-            setIsHovered(false);
-            Object.values(actions).forEach(action => {
-              console.log(`Resetting to closed state: ${action.getClip().name}`);
-              action.paused = true; // Pause the animation
-              action.time = 0; // Reset to the initial frame (closed state)
-            });
-          } else {
-            console.log('No actions found in userData');
-          }
-        }
-      });
-    }
-  };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <group ref={matRef} position={[0, 2.2, 0]}>
       <primitive
         object={matScene}
-        position={[0, -3, -1]} // Adjust the mat position
-        scale={[4, 4, 4]} // Adjust the mat scale
-        rotation={[-0.5, 3.2, -0.04]} // Adjust the mat rotation
+        position={[-4, -1.6, 7.2]} // Adjust the mat position
+        scale={matScale} // Dynamic scale based on window size
+        rotation={[6.3, 2.7, -0.04]} // Adjust the mat rotation
       />
-      <primitive
-        object={bookScene}
-        ref={bookRef}
-        position={[-3.2, -1.5, -1]} // Adjust the book position
-        scale={[0.8, 0.8, 0.8]} // Adjust the book scale
-        rotation={[1.07, 0.02, -0.3]} // Adjust the book rotation (rotate 45 degrees around Y-axis)
-        onPointerOver={handlePointerOver}
-        onPointerOut={handlePointerOut}
+      <Book
+        position={[-7, -2, 6.32]}
+        rotation={[1.58, 0.02, -12.4]}
+        scale={[0.8, 0.8, 0.8]}
+        link="https://github.com/Junxiujunxiu/jun-portfolio.git"
+        title="Jun's portfolio"
+      />
+      <Book
+        position={[-10, -2, 6.32]}
+        rotation={[1.58, 0.02, -12.4]}
+        scale={[1, 1, 1]}
+        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
+        title="Jun's second portfolio"
+      />
+
+<Book
+        position={[-14, -4, 7]}
+        rotation={[1.58, 0.02, -12.4]}
+        scale={[1, 1, 1]}
+        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
+        title="Jun's second portfolio"
+      />
+
+<Book
+        position={[-2, -2, 10]}
+        rotation={[1.58, 0.02, -12.4]}
+        scale={[1, 1, 1]}
+        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
+        title="Jun's second portfolio"
+      />
+
+<Book
+        position={[-14, -4, 4.32]}
+        rotation={[1.58, 0.02, -12.4]}
+        scale={[1, 1, 1]}
+        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
+        title="Jun's second portfolio"
       />
     </group>
   );

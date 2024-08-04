@@ -15,9 +15,7 @@ const Logos: React.FC = () => {
       <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
         <FaLinkedin size={40} className="logo bouncing" />
       </a>
-      <a href="https://www.wechat.com" target="_blank" rel="noopener noreferrer">
-        <SiWechat size={40} className="logo bouncing" />
-      </a>
+      
     </div>
   );
 };
