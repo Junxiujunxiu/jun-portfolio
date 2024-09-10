@@ -22,7 +22,7 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
-      // Duplicate items enough times to create a seamless infinite loop
+      // Duplicate items enough times to create an infinite loop
       const numDuplicates = Math.ceil(window.innerWidth / scrollerRef.current.scrollWidth) + 1;
       for (let i = 0; i < numDuplicates; i++) {
         scrollerContent.forEach((item) => {
@@ -47,7 +47,7 @@ export const InfiniteMovingCards = ({
           ? '10s'
           : speed === 'normal'
           ? '40s'
-          : '80s';
+          : '400s';
       containerRef.current.style.setProperty('--animation-duration', duration);
     }
   };
@@ -85,6 +85,7 @@ export const InfiniteMovingCards = ({
           display: flex;
           min-width: 100%; 
           width: max-content; 
+          gap: 20px; /* Add space between grade boxes */
         }
       `}</style>
       <div className={`space-y-6 ${className}`}>
