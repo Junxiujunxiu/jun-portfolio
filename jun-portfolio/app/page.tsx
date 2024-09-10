@@ -5,8 +5,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import Road from '../components/Road';
 import Character from '../components/Character';
-import Dog from '../components/Dog';
-import Inventory from '../components/Inventory';
+import Dog from '../components/dog';
 import Landscape from '../components/Landscape';
 import Skybox from '../components/Skybox';
 import Navbar from '../components/Navbar';
@@ -23,11 +22,6 @@ const SetCamera = () => {
 };
 
 const Home: React.FC = () => {
-  const [showInventory, setShowInventory] = useState(false);
-
-  const handleClickHead = () => {
-    setShowInventory(!showInventory);
-  };
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-0 m-0">
@@ -37,13 +31,12 @@ const Home: React.FC = () => {
           <hemisphereLight args={['#80caff', '#b2b2b2', 0.6]} position={[0, 50, 0]} />
           <directionalLight position={[80, 40, 80]} intensity={1.5} />
           <SetCamera />
-          <Character onClickHead={handleClickHead} />
+          <Character/>
           <Dog />
           <Road />
           <Landscape />
           <Skybox isVisible={true} />
           <OrbitControls />
-          {showInventory && <Inventory />}
           <Navbar />
         </Canvas>
       </div>

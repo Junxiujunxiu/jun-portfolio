@@ -11,7 +11,6 @@ interface GLTFResult {
 const Inventory: React.FC = () => {
   const matRef = useRef<THREE.Group>(null);
   const { scene: matScene } = useGLTF('/models/mat/scene.gltf') as unknown as GLTFResult;
-  const { actions: matActions } = useAnimations(matScene.animations, matRef);
 
   const [matScale, setMatScale] = useState([5, 5, 5]); // Original size
 
