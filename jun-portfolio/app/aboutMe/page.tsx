@@ -30,8 +30,8 @@ const AboutMe = () => {
           }
         >
           <CanvasRevealEffect
-            animationSpeed={5.1}
-            containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
+            animationSpeed={3}
+            containerClassName="bg-pink-400 rounded-3xl overflow-hidden"
           />
         </Card>
         <Card
@@ -39,10 +39,9 @@ const AboutMe = () => {
             icon={<AceternityIcon text="My Journey" />}
             des={
               <>
-                My journey as a developer began with a fascination for HTML, CSS, and JavaScript.<br />
-                I found it incredibly exciting to see how a few lines of code could transform a website.<br /><br />
-                This curiosity led me to explore free courses on YouTube, where I dived into various programming languages like C and C++. I even tried my hand at Unreal Engine, attempting to build a small game.<br /><br />
-                While I enjoyed creating the game logic, I hit a wall with static meshes and animations, so I paused that project for a while.<br /><br />
+                My journey as a developer began with a fascination for HTML, CSS, and JavaScript.
+                I found it incredibly exciting to see how a few lines of code could transform a website.<br />
+                This curiosity led me to explore free courses on YouTube, where I dived into various programming languages like C and C++. I even tried my hand at Unreal Engine, attempting to build a small game.While I enjoyed creating the game logic, I hit a wall with static meshes and animations, so I paused that project for a while.<br />
                 From there, I explored Android Studio, and it became clear that I needed a more structured approach to my learning.<br />
                 That’s when I decided to enroll in the Bachelor of Computer and Information Science program at Auckland University of Technology, where I’m now refining my skills and expanding my knowledge every day.
               </>
@@ -50,12 +49,12 @@ const AboutMe = () => {
           >
             <CanvasRevealEffect
               animationSpeed={3}
-              containerClassName="bg-pink-900 rounded-3xl overflow-hidden"
+              containerClassName="bg-purple-600 rounded-3xl overflow-hidden"
               colors={[
-                [255, 166, 158],
-                [221, 255, 247],
+                [253, 230, 138],  // Warm yellow (#FDE68A)
+                [252, 165, 165],  // Light coral red (#FCA5A5)
               ]}
-              dotSize={2}
+              dotSize={3}
             />
           </Card>
 
@@ -73,7 +72,7 @@ const AboutMe = () => {
           >
             <CanvasRevealEffect
               animationSpeed={3}
-              containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
+              containerClassName="bg-indigo-500 rounded-3xl overflow-hidden"
               colors={[[125, 211, 252]]}
             />
           </Card>
