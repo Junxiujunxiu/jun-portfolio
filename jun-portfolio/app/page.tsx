@@ -1,16 +1,23 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,Suspense } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import Road from '../components/Road';
-import Character from '../components/Character';
-import Dog from '../components/dog';
-import Landscape from '../components/Landscape';
-import Skybox from '../components/Skybox';
+import dynamic from 'next/dynamic';
+
 import Navbar from '../components/Navbar';
 import Logos from '../components/Logos';
+
 import '../style.css';
+
+const Character = dynamic(() => import('../components/Character'), { ssr: false });
+const Dog = dynamic(() => import('../components/dog'), { ssr: false });
+const Road = dynamic(() => import('../components/Road'), { ssr: false });
+const Landscape = dynamic(() => import('../components/Landscape'), { ssr: false });
+const Skybox = dynamic(() => import('../components/Skybox'), { ssr: false });
+const Inventory = dynamic(() => import('../components/Inventory'), {
+  ssr: false,
+});
 
 const SetCamera = () => {
   const { camera } = useThree();
@@ -22,6 +29,11 @@ const SetCamera = () => {
 };
 
 const Home: React.FC = () => {
+  const [showInventory, setShowInventory] = useState(false); // State for showing/hiding inventory
+
+  const toggleInventory = () => {
+    setShowInventory((prevShowInventory) => !prevShowInventory); // Toggle the state
+  };
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-0 m-0">
@@ -31,15 +43,19 @@ const Home: React.FC = () => {
           <hemisphereLight args={['#80caff', '#b2b2b2', 0.6]} position={[0, 50, 0]} />
           <directionalLight position={[80, 40, 80]} intensity={1.5} />
           <SetCamera />
-          <Character/>
+          <Character />
           <Dog />
           <Road />
           <Landscape />
           <Skybox isVisible={true} />
           <OrbitControls />
-          <Navbar />
+          
+          {/* Conditionally render Inventory */}
+          {showInventory && <Inventory />}
         </Canvas>
       </div>
+      {/* Pass the toggleInventory function to Navbar */}
+      <Navbar onToggleInventory={toggleInventory} />
       <Logos />
     </main>
   );
