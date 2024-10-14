@@ -17,7 +17,7 @@ const Inventory: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       const aspectRatio = window.innerWidth / window.innerHeight;
-      const newScale = aspectRatio < 1 ? aspectRatio * 5 : 5; // Adjust scaling factor as needed
+      const newScale = aspectRatio < 1 ? aspectRatio * 4 : 4; // Adjust scaling factor as needed
       setMatScale([newScale, newScale, newScale]);
     };
 
@@ -38,42 +38,42 @@ const Inventory: React.FC = () => {
         rotation={[6.3, 2.7, -0.04]} // Adjust the mat rotation
       />
       <Book
-        position={[-7, -2, 6.32]}
+        position={[-5.6, 1, 6.56]}
         rotation={[1.58, 0.02, -12.4]}
-        scale={[0.8, 0.8, 0.8]}
+        scale={[0.7, 0.7, 0.7]}
         link="https://github.com/Junxiujunxiu/jun-portfolio.git"
-        title="Jun's portfolio"
+        title="1"
       />
       <Book
-        position={[-10, -2, 6.32]}
-        rotation={[1.58, 0.02, -12.4]}
-        scale={[1, 1, 1]}
+        position={[-2.6, 1, 8]}
+        rotation={[1.58, 0.03, -11.86]}
+        scale={[0.7, 0.7, 0.7]}
         link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="Jun's second portfolio"
+        title="2"
       />
 
 <Book
-        position={[-14, -4, 7]}
-        rotation={[1.58, 0.02, -12.4]}
-        scale={[1, 1, 1]}
+       position={[-2.6, -4.5, 8]}
+       rotation={[1.58, 0.03, -11.86]}
+        scale={[0.7, 0.7, 0.7]}
         link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="Jun's second portfolio"
+        title="3"
       />
 
 <Book
-        position={[-2, -2, 10]}
-        rotation={[1.58, 0.02, -12.4]}
-        scale={[1, 1, 1]}
+        position={[-2.6, -1.8, 8]}
+        rotation={[1.58, 0.03, -11.86]}
+        scale={[0.7, 0.7, 0.7]}
         link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="Jun's second portfolio"
+        title="4"
       />
 
 <Book
-        position={[-14, -4, 4.32]}
+        position={[-5.6, -2, 6.56]}
         rotation={[1.58, 0.02, -12.4]}
-        scale={[1, 1, 1]}
+        scale={[0.7, 0.7, 0.7]}
         link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="Jun's second portfolio"
+        title="5"
       />
     </group>
   );
