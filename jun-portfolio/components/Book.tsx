@@ -100,27 +100,31 @@ const Book: React.FC<BookProps> = ({ position, rotation, scale, link, title }) =
         onClick={handlePointerClick}
       />
       {isHovered && (
-        <Html position={position}>
-          <div className="title" style={{
-            color: '#007BFF',
-            fontSize: '30px',
-            fontWeight: 'bold',
-            animation: 'fadeIn 1s ease-in-out'
-          }}>
-            {title}
-          </div>
-          <style>
-            {`
-              @keyframes fadeIn {
-                0% { opacity: 0; }
-                100% { opacity: 1; }
-              }
-              .title {
-                animation: fadeIn 1s ease-in-out;
-              }
-            `}
-          </style>
-        </Html>
+       <Html position={position}>
+       <div className="title text-transparent text-4xl font-bold animate-fadeIn"
+         style={{
+           backgroundImage: 'linear-gradient(45deg, #ff69b4, #7f00ff)', // Gradient text
+           WebkitBackgroundClip: 'text', // Clipping for the gradient text effect
+           textShadow: '0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #7f00ff', // Glowing effect
+           fontFamily: `'Uncial Antiqua', cursive` // Fantasy font from Google Fonts
+         }}
+       >
+         {title}
+       </div>
+     
+       <style>
+         {`
+           @keyframes fadeIn {
+             0% { opacity: 0; }
+             100% { opacity: 1; }
+           }
+           .animate-fadeIn {
+             animation: fadeIn 1s ease-in-out;
+           }
+         `}
+       </style>
+     </Html>
+     
       )}
     </>
   );

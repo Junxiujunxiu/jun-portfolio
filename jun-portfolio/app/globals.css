@@ -31,3 +31,53 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow: 0 0 10px #ff8a00, 0 0 20px #ff0080;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff8a00, 0 0 20px #ff0080;
+  }
+  to {
+    text-shadow: 0 0 20px #ff8a00, 0 0 40px #ff0080;
+  }
+}
+
+/* Fantasy style labels */
+.fantasy-label {
+  font-family: 'Almendra Display', serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Fantasy-style input fields */
+.fantasy-input {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-family: 'Cinzel Decorative', serif;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.fantasy-input:focus {
+  border-color: #ff8a00;
+  box-shadow: 0 0 15px rgba(255, 138, 0, 0.8);
+}
+
+/* Glowing button */
+.glowing-button {
+  background: linear-gradient(45deg, #ff8a00, #ff0080);
+  box-shadow: 0 0 15px rgba(255, 138, 0, 0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+.glowing-button:hover {
+  box-shadow: 0 0 30px rgba(255, 138, 0, 0.8);
+}

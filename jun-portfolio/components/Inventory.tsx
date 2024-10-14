@@ -41,39 +41,39 @@ const Inventory: React.FC = () => {
         position={[-5.6, 1, 6.56]}
         rotation={[1.58, 0.02, -12.4]}
         scale={[0.7, 0.7, 0.7]}
-        link="https://github.com/Junxiujunxiu/jun-portfolio.git"
-        title="1"
+        link="https://github.com/Junxiujunxiu/ENSE701_Group8"
+        title="Speed App"
       />
       <Book
         position={[-2.6, 1, 8]}
         rotation={[1.58, 0.03, -11.86]}
         scale={[0.7, 0.7, 0.7]}
-        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="2"
+        link="https://github.com/evanvonzhou/autcsa-web/tree/master/src"
+        title="Student Association Web"
       />
 
 <Book
        position={[-2.6, -4.5, 8]}
        rotation={[1.58, 0.03, -11.86]}
         scale={[0.7, 0.7, 0.7]}
-        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="3"
+        link="https://github.com/Junxiujunxiu/jun-portfolio"
+        title="3d portfolio"
       />
 
 <Book
         position={[-2.6, -1.8, 8]}
         rotation={[1.58, 0.03, -11.86]}
         scale={[0.7, 0.7, 0.7]}
-        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="4"
+        link="https://github.com/Junxiujunxiu/Weather-App"
+        title="Weather App"
       />
 
 <Book
         position={[-5.6, -2, 6.56]}
         rotation={[1.58, 0.02, -12.4]}
         scale={[0.7, 0.7, 0.7]}
-        link="https://github.com/Junxiujunxiu/jun-second-portfolio.git"
-        title="5"
+        link="https://github.com/Junxiujunxiu/fireflies"
+        title="Fireflies in the dark"
       />
     </group>
   );
