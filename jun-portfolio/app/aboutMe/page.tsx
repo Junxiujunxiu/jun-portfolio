@@ -23,9 +23,9 @@ const AboutMe = () => {
           des={
             <>
               <ul className="list-disc pl-5 space-y-2">
-                <li>I'm a dedicated student with strong academic performance.</li>
+                <li>I&apos;m a dedicated student with strong academic performance.</li>
                 <li>I enjoy horror movies, survival games, and experimenting with cooking.</li>
-                <li>I’m passionate about cryptocurrency trading and constantly learning new things.</li>
+                <li>I&apos;m passionate about cryptocurrency trading and constantly learning new things.</li>
                 <li>I believe my diverse interests make me adaptable and open to new challenges.</li>
               </ul>
             </>
@@ -46,7 +46,7 @@ const AboutMe = () => {
                 <li>I started with HTML, CSS, and JavaScript.</li>
                 <li>Explored programming with C, C++, and game development using Unreal Engine.</li>
                 <li>Realized I needed a structured learning path, leading me to study at AUT.</li>
-                <li>Now, I’m growing my skills in software development every day.</li>
+                <li>Now, I&apos;m growing my skills in software development every day.</li>
               </ul>
             </>
           }
@@ -68,7 +68,7 @@ const AboutMe = () => {
           des={
             <>
               <ul className="list-disc pl-5 space-y-2">
-                <li>I’m always exploring new tech stacks and learning new skills.</li>
+                <li>I&apos;m always exploring new tech stacks and learning new skills.</li>
                 <li>I love applying what I learn through building small projects.</li>
                 <li>Keeping up with new tools and environments excites me.</li>
                 <li>Despite the challenges, I enjoy diving into new technologies and experimenting with them.</li>

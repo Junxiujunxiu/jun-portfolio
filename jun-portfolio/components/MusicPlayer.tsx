@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image'; // Import the Image component
 
 const MusicPlayer: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false); // Initially set to false to handle autoplay restriction
@@ -88,9 +89,9 @@ const MusicPlayer: React.FC = () => {
         }}
       >
         {isPlaying ? (
-          <img src="/music-on.png" alt="Music On" width={40} height={40} />
+          <Image src="/music-on.png" alt="Music On" width={40} height={40} />
         ) : (
-          <img src="/music-off.png" alt="Music Off" width={40} height={40} />
+          <Image src="/music-off.png" alt="Music Off" width={40} height={40} />
         )}
       </button>
 

@@ -42,7 +42,7 @@ const Road = () => {
       roadRef.current.geometry.dispose(); // Dispose of old geometry
       roadRef.current.geometry = new BoxGeometry(roadWidth, roadHeight, roadDepth); // Create new geometry with updated size
     }
-  }, [size, viewport]);
+  }, [size, viewport, aspectRatio]); // <-- Added `aspectRatio` to the dependency array
 
   // Animate the texture offset to create a moving effect
   useFrame((state, delta) => {

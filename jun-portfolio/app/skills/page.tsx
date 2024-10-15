@@ -208,7 +208,7 @@ const Skills = () => {
             }}
           >
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              "Narrowing my focus has allowed me to build deeper expertise in a few core areas, providing me with a stronger foundation as I continue to learn."
+              &quot;Narrowing my focus has allowed me to build deeper expertise in a few core areas, providing me with a stronger foundation as I continue to learn.&quot;
             </p>
             <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>My Reflection</h3>
           </motion.div>
@@ -223,7 +223,7 @@ const Skills = () => {
             }}
           >
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              "Each new project has allowed me to apply my growing skills in real-world scenarios, helping me learn and improve."
+              &quot;Each new project has allowed me to apply my growing skills in real-world scenarios, helping me learn and improve.&quot;
             </p>
             <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Project Experience</h3>
           </motion.div>
@@ -238,7 +238,7 @@ const Skills = () => {
             }}
           >
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              "My journey is about continuous learning and improvement. I'm focused on becoming proficient in the technologies I'm passionate about."
+              &quot;My journey is about continuous learning and improvement. I&apos;m focused on becoming proficient in the technologies I&apos;m passionate about.&quot;
             </p>
             <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Looking Forward</h3>
           </motion.div>
