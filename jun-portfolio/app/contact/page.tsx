@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
         Contact Me
       </h1>
       <p className="text-xl mb-6" style={{ fontFamily: "'Almendra Display', serif", fontWeight: 'bold' }}>
-        I'd love to hear from you!
+        I&apos;d love to hear from you!
       </p>
 
       {/* Conditional rendering for Thank You message */}
