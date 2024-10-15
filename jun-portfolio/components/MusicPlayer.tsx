@@ -1,31 +1,14 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image'; // Import the Image component
 
 const MusicPlayer: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false); // Initially set to false to handle autoplay restriction
+  const [isPlaying, setIsPlaying] = useState(false); // Initially set to false, music is off by default
+  const [showJourneyMessage, setShowJourneyMessage] = useState(true); // Show the journey message at the start
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [autoplayFailed, setAutoplayFailed] = useState(false); // Track if autoplay failed
 
-  // Try to play the audio automatically when the page loads
-  useEffect(() => {
-    const playAudio = async () => {
-      if (audioRef.current) {
-        try {
-          await audioRef.current.play();
-          setIsPlaying(true);  // Set as playing after successful autoplay
-        } catch (error) {
-          console.error("Autoplay blocked by browser:", error);
-          setAutoplayFailed(true);  // Track if autoplay was blocked
-        }
-      }
-    };
-
-    playAudio();  // Try to play audio as soon as the page loads
-  }, []);
-
-  // Toggle play/pause for the music
+  // Toggle play/pause for the music and hide the message after clicking "Start the Journey"
   const toggleMusic = async () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -35,7 +18,7 @@ const MusicPlayer: React.FC = () => {
         try {
           await audioRef.current.play();
           setIsPlaying(true);
-          setAutoplayFailed(false);  // Reset if autoplay was blocked but user plays manually
+          setShowJourneyMessage(false); // Hide the message after clicking
         } catch (error) {
           console.error("Playback error:", error);
         }
@@ -50,8 +33,8 @@ const MusicPlayer: React.FC = () => {
         Your browser does not support the audio element.
       </audio>
 
-      {/* If autoplay failed, prompt user to click */}
-      {autoplayFailed && (
+      {/* Show the Start Journey message initially, hide it after clicking */}
+      {showJourneyMessage && (
         <div
           className="start-journey-message"
           onClick={toggleMusic} // Call the toggle function on click
