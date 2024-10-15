@@ -8,7 +8,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ onToggleInventory }) => {
   return (
     <>
-      <div className="fixed top-4 right-40 z-20">
+      <div className="fixed top-8 right-40 z-20">
         <div className="relative group">
           <button className="nav-toggle text-black-10 py-2 px-6 rounded border-2 border-white transition-all duration-300 ease-in-out hover:bg-white hover:text-gray-600 font-deersnow">
             Jun's journey

@@ -25,30 +25,32 @@ const grades = [
 const MyGrades: React.FC = () => {
   return (
     <section 
-      className="w-full min-h-screen py-20 text-white relative" 
+      className="w-full min-h-screen py-20 text-white relative overflow-hidden" // Add overflow-hidden to prevent scrolling
       style={{
         backgroundImage: "url('/darkBG.gif')", // Path to your new GIF
-        backgroundSize: "cover", // Make the GIF cover the entire section
-        backgroundPosition: "center", // Center the background
-        backgroundRepeat: "no-repeat", // Prevent the GIF from repeating
+        backgroundSize: "cover", 
+        backgroundPosition: "center", 
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed", // Fix the background so it doesn't move with scrolling
       }}
     >
-      <div className="text-center space-y-6 mb-16 w-full px-4 md:px-8 max-w-full lg:max-w-5xl mx-auto">
-        {/* Full width content that adapts to smaller and larger screens */}
+      {/* Text content */}
+      <div className="text-center space-y-6 mb-16 w-full px-4 md:px-8 max-w-full lg:max-w-3xl mx-auto">
+        {/* Responsive heading */}
         <div className="flex items-center justify-center space-x-4">
-          <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"></div>
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+          <div className="w-12 h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"></div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
             My Grades
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400"></div>
+          <div className="w-12 h-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-400"></div>
         </div>
-        <p className="text-base md:text-lg max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
           Take a look at my academic achievements, reflecting my commitment to learning and continuous growth.
         </p>
       </div>
 
-      <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-full lg:max-w-5xl px-4 md:px-8 mx-auto">
-        {/* Full width moving cards with max-w-5xl */}
+      {/* Moving Cards Section */}
+      <div className="container mx-auto flex flex-col items-center justify-center space-y-6 w-full">
         {/* First row - Moves left */}
         <InfiniteMovingCards items={grades} direction="left" speed="slow" />
         {/* Second row - Moves right */}

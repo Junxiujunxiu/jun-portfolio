@@ -25,8 +25,18 @@ const Book: React.FC<BookProps> = ({ position, rotation, scale, link, title }) =
   const { actions: bookActions } = useAnimations(bookAnimations, bookRef);
 
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // Track if it's a mobile device
+  const [isClicked, setIsClicked] = useState(false); // Track if clicked once for mobile
+
+  // Utility function to detect mobile devices
+  const detectMobileDevice = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+    return /android|iPad|iPhone|iPod/.test(userAgent.toLowerCase());
+  };
 
   useEffect(() => {
+    setIsMobile(detectMobileDevice());
+
     if (bookRef.current) {
       bookRef.current.traverse(child => {
         if (child instanceof THREE.Mesh) {
@@ -46,25 +56,50 @@ const Book: React.FC<BookProps> = ({ position, rotation, scale, link, title }) =
   }, [bookAnimations, bookActions, position, title]);
 
   const handlePointerOver = (e: THREE.Event) => {
-    setIsHovered(true);
-    const book = bookRef.current;
-    if (book) {
-      book.traverse(child => {
-        if (child instanceof THREE.Mesh) {
-          const actions = child.userData.actions as { [key: string]: THREE.AnimationAction };
-          if (actions) {
-            Object.values(actions).forEach(action => {
-              action.reset().fadeIn(0.5).play();
-            });
-          }
-        }
-      });
+    if (!isMobile) {  // Only on desktop
+      setIsHovered(true);
+      triggerAnimation(true);
+      console.log('Pointer over book:', title);
     }
-    console.log('Pointer over book:', title);
   };
 
   const handlePointerOut = (e: THREE.Event) => {
-    setIsHovered(false);
+    if (!isMobile) {  // Only on desktop
+      setIsHovered(false);
+      triggerAnimation(false);
+      console.log('Pointer out of book:', title);
+    }
+  };
+
+  const handlePointerClick = (e: THREE.Event) => {
+    if (isMobile) {
+      if (!isClicked) {
+        // First tap on mobile shows the animation and text
+        setIsHovered(true);
+        setIsClicked(true);
+        triggerAnimation(false);
+
+        // Auto-hide after 2 seconds (optional for mobile behavior)
+        setTimeout(() => {
+          setIsHovered(false);
+          setIsClicked(true);
+          triggerAnimation(true);
+        }, 2000);
+       
+        console.log('First touch on mobile book:', title);
+      } else {
+        // Second tap on mobile opens the link
+        window.open(link, '_blank');
+        console.log('Book clicked on mobile:', title);
+      }
+    } else {
+      // On desktop, clicking opens the link immediately
+      window.open(link, '_blank');
+      console.log('Book clicked on desktop:', title);
+    }
+  };
+
+  const triggerAnimation = (play: boolean) => {
     const book = bookRef.current;
     if (book) {
       book.traverse(child => {
@@ -72,19 +107,17 @@ const Book: React.FC<BookProps> = ({ position, rotation, scale, link, title }) =
           const actions = child.userData.actions as { [key: string]: THREE.AnimationAction };
           if (actions) {
             Object.values(actions).forEach(action => {
-              action.paused = true;
-              action.time = 0;
+              if (play) {
+                action.reset().fadeIn(0.5).play(); // Play animation smoothly
+              } else {
+                action.paused = true;
+                action.time = 0;
+              }
             });
           }
         }
       });
     }
-    console.log('Pointer out of book:', title);
-  };
-
-  const handlePointerClick = (e: THREE.Event) => {
-    window.open(link, '_blank');
-    console.log('Book clicked:', title);
   };
 
   return (
@@ -95,9 +128,9 @@ const Book: React.FC<BookProps> = ({ position, rotation, scale, link, title }) =
         position={position}
         scale={scale}
         rotation={rotation}
-        onPointerOver={handlePointerOver}
-        onPointerOut={handlePointerOut}
-        onClick={handlePointerClick}
+        onPointerOver={handlePointerOver}  // Desktop: Hover
+        onPointerOut={handlePointerOut}    // Desktop: Hover out
+        onClick={handlePointerClick}       // Desktop: Click / Mobile: Tap
       />
       {isHovered && (
        <Html position={position}>

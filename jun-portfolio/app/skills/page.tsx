@@ -3,31 +3,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Sample skills data, you can adjust this to your actual skills
+// Updated skills data to reflect your focus and current expertise level
 const skills = [
   {
     id: 1,
-    name: "JavaScript",
-    level: "Expert",
-    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+    name: "Java",
+    level: "Junior",
+    icon: "https://cdn-icons-png.flaticon.com/512/226/226777.png", // Java icon
   },
   {
     id: 2,
-    name: "React",
-    level: "Advanced",
-    icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png",
+    name: "JavaScript",
+    level: "Junior",
+    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png", // JavaScript icon
   },
   {
     id: 3,
-    name: "Node.js",
-    level: "Intermediate",
-    icon: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+    name: "TypeScript",
+    level: "Junior",
+    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png", // TypeScript icon
   },
   {
     id: 4,
-    name: "CSS",
-    level: "Advanced",
-    icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+    name: "MongoDB",
+    level: "Junior",
+    icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png", // MongoDB icon
+  },
+  {
+    id: 5,
+    name: "React",
+    level: "Junior",
+    icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png", // React icon
   },
 ];
 
@@ -53,7 +59,7 @@ const Skills = () => {
       className="py-20 w-full text-white font-fantasy relative"
       style={{
         backgroundImage: `url('/world.jpg')`,
-        backgroundSize: 'cover',  // Ensures the background image covers the whole area
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
@@ -69,7 +75,7 @@ const Skills = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ color: 'rgba(255, 255, 255, 0.9)' }} // Semi-transparent text
+        style={{ color: 'rgba(255, 255, 255, 0.9)' }}
       >
         My <span className="text-yellow-300">Journey of Skills</span>
       </motion.h1>
@@ -111,14 +117,14 @@ const Skills = () => {
         ))}
       </motion.div>
 
-      {/* Additional Section: Milestones (Projects) */}
+      {/* Milestones Section */}
       <div className="mt-20">
         <motion.h2
           className="text-5xl font-bold text-center mb-12 animate-glow"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ color: 'rgba(255, 255, 255, 0.9)' }} // Semi-transparent text
+          style={{ color: 'rgba(255, 255, 255, 0.9)' }}
         >
           Milestones on My <span className="text-yellow-300">Journey</span>
         </motion.h2>
@@ -137,9 +143,9 @@ const Skills = () => {
               borderColor: 'rgba(255, 255, 255, 0.2)', // Light border
             }}
           >
-            <h3 className="text-2xl font-bold mb-3" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Milestone A</h3>
+            <h3 className="text-2xl font-bold mb-3" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Deepening Focus</h3>
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              A significant step on my journey, where I overcame challenges and developed key skills.
+              After being exposed to various technologies, I decided to narrow my focus on mastering Java, React, TypeScript, and MongoDB to build comprehensive full-stack applications.
             </p>
           </motion.div>
 
@@ -152,9 +158,9 @@ const Skills = () => {
               borderColor: 'rgba(255, 255, 255, 0.2)', // Light border
             }}
           >
-            <h3 className="text-2xl font-bold mb-3" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Milestone B</h3>
+            <h3 className="text-2xl font-bold mb-3" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Full-Stack Development</h3>
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              A project that marked a turning point, teaching me valuable lessons and honing my expertise.
+              Developed full-stack applications integrating front-end frameworks like React with back-end services using Node.js and MongoDB, enhancing my practical understanding of these technologies.
             </p>
           </motion.div>
 
@@ -167,22 +173,22 @@ const Skills = () => {
               borderColor: 'rgba(255, 255, 255, 0.2)', // Light border
             }}
           >
-            <h3 className="text-2xl font-bold mb-3" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Milestone C</h3>
+            <h3 className="text-2xl font-bold mb-3" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Problem-Solving and Algorithms</h3>
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              A challenging yet rewarding experience that contributed significantly to my journey.
+              Applied algorithmic thinking to solve complex problems using Java, focusing on performance and efficiency, while continuing to learn and strengthen my problem-solving skills.
             </p>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Additional Section: Reflections (Testimonials) */}
+      {/* Reflections Section */}
       <div className="mt-20">
         <motion.h2
           className="text-5xl font-bold text-center mb-12 animate-glow"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ color: 'rgba(255, 255, 255, 0.9)' }} // Semi-transparent text
+          style={{ color: 'rgba(255, 255, 255, 0.9)' }}
         >
           Reflections on My <span className="text-yellow-300">Journey</span>
         </motion.h2>
@@ -202,9 +208,9 @@ const Skills = () => {
             }}
           >
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              "This journey has been transformative, each milestone bringing me closer to mastering my craft."
+              "Narrowing my focus has allowed me to build deeper expertise in a few core areas, providing me with a stronger foundation as I continue to learn."
             </p>
-            <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Traveler A</h3>
+            <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>My Reflection</h3>
           </motion.div>
 
           <motion.div
@@ -217,9 +223,9 @@ const Skills = () => {
             }}
           >
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              "Each project is a step on a path of continuous learning and growth."
+              "Each new project has allowed me to apply my growing skills in real-world scenarios, helping me learn and improve."
             </p>
-            <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Traveler B</h3>
+            <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Project Experience</h3>
           </motion.div>
 
           <motion.div
@@ -232,9 +238,9 @@ const Skills = () => {
             }}
           >
             <p className="text-md" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-              "The journey is ongoing, and with each step, I grow more confident in my skills."
+              "My journey is about continuous learning and improvement. I'm focused on becoming proficient in the technologies I'm passionate about."
             </p>
-            <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Traveler C</h3>
+            <h3 className="text-2xl font-bold mt-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>Looking Forward</h3>
           </motion.div>
         </motion.div>
       </div>

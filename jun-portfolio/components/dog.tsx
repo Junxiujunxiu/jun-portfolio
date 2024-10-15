@@ -79,7 +79,7 @@ const Dog: React.FC = () => {
   }
 
   return (
-    <group ref={group} dispose={null} scale={[0.03, 0.03, 0.03]} position={[2, -3.2, 3.8]} rotation={[0.5, 5.4, 0.4]}>
+    <group ref={group} dispose={null} scale={[0.03, 0.03, 0.03]} position={[1.7, -3.2, 3.8]} rotation={[0.5, 5.4, 0.4]}>
       <primitive object={scene} />
     </group>
   );
