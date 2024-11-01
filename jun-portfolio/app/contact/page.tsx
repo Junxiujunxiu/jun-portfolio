@@ -47,6 +47,19 @@ const Contact: React.FC = () => {
         fontFamily: "'Cinzel Decorative', serif",  // Fantasy-style font
       }}
     >
+      <style jsx global>{`
+        .fantasy-input {
+          color: black; /* Default color */
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+          .fantasy-input {
+            color: black !important; /* Force color on mobile */
+          }
+        }
+      `}</style>
+
       <h1 
         className="text-5xl font-extrabold mb-8 glow-text"
         style={{ textShadow: '0 0 10px #ff8a00, 0 0 20px #ff0080' }}  // Glowing effect
@@ -73,7 +86,6 @@ const Contact: React.FC = () => {
               value={formData.name}
               onChange={handleChange}
               className="mt-1 w-full p-2 fantasy-input"
-              style={{ color: 'black' }}  // Set input text color to black
               required
             />
           </label>
@@ -86,7 +98,6 @@ const Contact: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               className="mt-1 w-full p-2 fantasy-input"
-              style={{ color: 'black' }}  // Set input text color to black
               required
             />
           </label>
@@ -99,7 +110,6 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               className="mt-1 w-full p-2 fantasy-input"
               rows={4}
-              style={{ color: 'black' }}  // Set textarea text color to black
               required
             />
           </label>
