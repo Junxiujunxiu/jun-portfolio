@@ -73,6 +73,7 @@ const Contact: React.FC = () => {
               value={formData.name}
               onChange={handleChange}
               className="mt-1 w-full p-2 fantasy-input"
+              style={{ color: 'black' }}  // Set input text color to black
               required
             />
           </label>
@@ -85,6 +86,7 @@ const Contact: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               className="mt-1 w-full p-2 fantasy-input"
+              style={{ color: 'black' }}  // Set input text color to black
               required
             />
           </label>
@@ -97,6 +99,7 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               className="mt-1 w-full p-2 fantasy-input"
               rows={4}
+              style={{ color: 'black' }}  // Set textarea text color to black
               required
             />
           </label>
