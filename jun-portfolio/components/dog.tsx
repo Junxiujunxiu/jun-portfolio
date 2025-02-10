@@ -16,7 +16,8 @@ const Dog: React.FC = () => {
   const group = useRef<THREE.Group>(null);
 
   // Load the GLTF model(scene) and animations using useGLTF hook
-  const { scene, animations } = useGLTF('https://3d-assets-portfolio.s3.amazonaws.com/models/dog/scene.gltf', true);
+  const { scene, animations } = useGLTF('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/dog/scene.gltf');
+
 
 
 
