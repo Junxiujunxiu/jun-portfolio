@@ -10,7 +10,7 @@ interface GLTFResult {
 
 const Inventory: React.FC = () => {
   const matRef = useRef<THREE.Group>(null);
-  const { scene: matScene } = useGLTF('/models/mat/scene.gltf') as unknown as GLTFResult;
+  const { scene: matScene } = useGLTF('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/mat/scene.gltf') as unknown as GLTFResult;
 
   const [matScale, setMatScale] = useState<[number, number, number]>([5, 5, 5]); // Original size
   const [bookScale, setBookScale] = useState<[number, number, number]>([0.7, 0.7, 0.7]); // Default book scale
@@ -121,7 +121,7 @@ const Inventory: React.FC = () => {
   );
 };
 
-useGLTF.preload('/models/mat/scene.gltf');
-useGLTF.preload('/models/book/scene.gltf');
+useGLTF.preload('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/mat/scene.gltf');
+useGLTF.preload('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/book/scene.gltf');
 
 export default Inventory;
