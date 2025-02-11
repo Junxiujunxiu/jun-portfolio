@@ -11,10 +11,10 @@ const Road = () => {
   const roadRef = useRef<Mesh>(null);
 
   // Load the textures
-  const texture = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Albedo/Diffuse map
-  const normalMap = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Normal map
-  const roughnessMap = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Roughness map
-  const aoMap = useLoader(TextureLoader, '/Material.002_baseColor.jpeg'); // Ambient Occlusion map
+  const texture = useLoader(TextureLoader, 'https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/Material.002_baseColor.jpeg'); // Albedo/Diffuse map
+  const normalMap = useLoader(TextureLoader, 'https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/Material.002_baseColor.jpeg'); // Normal map
+  const roughnessMap = useLoader(TextureLoader, 'https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/Material.002_baseColor.jpeg'); // Roughness map
+  const aoMap = useLoader(TextureLoader, 'https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/Material.002_baseColor.jpeg'); // Ambient Occlusion map
 
   // Get the size of the canvas and viewport
   const { size, viewport } = useThree();

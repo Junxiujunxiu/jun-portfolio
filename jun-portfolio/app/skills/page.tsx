@@ -58,7 +58,7 @@ const Skills = () => {
     <div
       className="py-20 w-full text-white font-fantasy relative"
       style={{
-        backgroundImage: `url('/world.jpg')`,
+        backgroundImage: `url('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/world.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',

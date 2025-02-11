@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
     <div 
       className="flex flex-col items-center justify-center min-h-screen p-6 text-white"
       style={{
-        backgroundImage: "url('/darkBG.gif')",  // Background image with fantasy theme
+        backgroundImage: "url('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/darkBG.gif')",  // Background image with fantasy theme
         backgroundSize: "cover", 
         backgroundPosition: "center", 
         backgroundRepeat: "no-repeat",
