@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 const Skybox: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
-  const { scene } = useGLTF('/models/skybox/scene.gltf');
+  const { scene } = useGLTF('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/skybox/scene.gltf');
   const sceneRef = useRef<THREE.Object3D>(null);
 
   useEffect(() => {

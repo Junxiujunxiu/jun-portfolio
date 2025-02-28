@@ -16,7 +16,10 @@ const Dog: React.FC = () => {
   const group = useRef<THREE.Group>(null);
 
   // Load the GLTF model(scene) and animations using useGLTF hook
-  const { scene, animations } = useGLTF('/models/dog/scene.gltf') as unknown as GLTFResult;
+  const { scene, animations } = useGLTF('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/dog/scene.gltf');
+
+
+
 
   // Extract animations and actions from the loaded animations
   const { actions } = useAnimations(animations, group);
@@ -86,6 +89,7 @@ const Dog: React.FC = () => {
 };
 
 // Preload the GLTF model to ensure it's ready when component mounts
-useGLTF.preload('/models/dog/scene.gltf');
+useGLTF.preload('https://3d-assets-portfolio.s3.amazonaws.com/models/dog/scene.gltf');
+
 
 export default Dog;

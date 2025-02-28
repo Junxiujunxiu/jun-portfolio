@@ -13,7 +13,7 @@ interface GLTFResult {
 const Character: React.FC = () => {
   const group = useRef<THREE.Group>(null);
 
-  const { scene, animations } = useGLTF('/models/boy/scene.gltf') as unknown as GLTFResult;
+  const { scene, animations } = useGLTF('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/boy/scene.gltf') as unknown as GLTFResult;
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -94,6 +94,7 @@ const Character: React.FC = () => {
   );
 };
 
-useGLTF.preload('/models/boy/scene.gltf');
+// **Updated the preload path to AWS S3 URL**
+useGLTF.preload('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/boy/scene.gltf');
 
 export default Character;

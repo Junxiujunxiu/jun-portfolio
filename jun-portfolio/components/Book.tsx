@@ -17,7 +17,7 @@ interface BookProps {
 
 const Book: React.FC<BookProps> = ({ position, rotation, scale, link, title }) => {
   const bookRef = useRef<THREE.Group>(null);
-  const { scene: originalScene, animations: originalAnimations } = useGLTF('/models/book/scene.gltf') as unknown as GLTFResult;
+  const { scene: originalScene, animations: originalAnimations } = useGLTF('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/book/scene.gltf') as unknown as GLTFResult;
 
   // Clone the scene and animations
   const bookScene = originalScene.clone();

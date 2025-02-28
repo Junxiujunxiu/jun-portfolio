@@ -10,7 +10,7 @@ const AboutMe = () => {
     <section
       className="w-full py-20 text-white"
       style={{
-        backgroundImage: `url('/world2.jpg')`,
+        backgroundImage: `url('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/world2.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',

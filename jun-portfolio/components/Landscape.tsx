@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 export default function Landscape() { 
-  const { scene } = useGLTF('/models/land/scene.gltf');
+  const { scene } = useGLTF('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/models/land/scene.gltf');
   const landscapeRef = useRef<THREE.Object3D>(null);
 
   useFrame(() => {

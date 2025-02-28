@@ -19,6 +19,9 @@ const grades = [
   { text: "Data Structures and Algorithms - A-" },
   { text: "Networks and Internet - A+" },
   { text: "Software Development Practice - B+" },
+  { text: "Information Security Technologies - B+" },
+  { text: "Enterprise Networks - C-" },
+  { text: "Contemporary Issues in Software Engineering - B+" },
   { text: "Web Development - A+" }
 ];
 
@@ -27,7 +30,7 @@ const MyGrades: React.FC = () => {
     <section 
       className="w-full min-h-screen py-20 text-white relative overflow-hidden" // Add overflow-hidden to prevent scrolling
       style={{
-        backgroundImage: "url('/darkBG.gif')", // Path to your new GIF
+        backgroundImage: "url('https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/darkBG.gif')", // Path to your new GIF
         backgroundSize: "cover", 
         backgroundPosition: "center", 
         backgroundRepeat: "no-repeat",

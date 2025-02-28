@@ -1,7 +1,7 @@
 // components/Logos.tsx
 import React from 'react';
 import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
-import { SiWechat } from 'react-icons/si';
+
 
 const Logos: React.FC = () => {
   return (

@@ -29,7 +29,7 @@ const MusicPlayer: React.FC = () => {
   return (
     <div className="music-player">
       <audio ref={audioRef} loop>
-        <source src="/background-music.mp3" type="audio/mp3" />
+        <source src="https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/background-music.mp3" type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
 
@@ -72,9 +72,9 @@ const MusicPlayer: React.FC = () => {
         }}
       >
         {isPlaying ? (
-          <Image src="/music-on.png" alt="Music On" width={40} height={40} />
+          <Image src="https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/music-on.png" alt="Music On" width={40} height={40} />
         ) : (
-          <Image src="/music-off.png" alt="Music Off" width={40} height={40} />
+          <Image src="https://3d-assets-portfolio.s3-ap-southeast-2.amazonaws.com/material/music-off.png" alt="Music Off" width={40} height={40} />
         )}
       </button>
 
