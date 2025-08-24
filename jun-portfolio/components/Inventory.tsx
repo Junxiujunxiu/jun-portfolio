@@ -20,6 +20,7 @@ const Inventory: React.FC = () => {
     [-2.6, -4.5, 8],
     [-2.6, -1.8, 8],
     [-5.6, -2, 6.56],
+    [-3, 10, 2]
   ]);
 
   useEffect(() => {
@@ -107,15 +108,15 @@ const Inventory: React.FC = () => {
         position={bookPosition[3]}
         rotation={[1.58, 0.03, -11.86]}
         scale={bookScale}
-        link="https://github.com/Junxiujunxiu/Weather-App"
-        title="Weather App"
+        link="https://github.com/Junxiujunxiu/skillHub"
+        title="SkillHub"
       />
       <Book
         position={bookPosition[4]}
         rotation={[1.58, 0.02, -12.4]}
         scale={bookScale}
-        link="https://github.com/Junxiujunxiu/fireflies"
-        title="Fireflies in the Dark"
+        link="https://github.com/sunyuchang123/Comp-603-Team-22/tree/main/team%2022"
+        title="Inventory Management"
       />
     </group>
   );
