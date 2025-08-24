@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "sanity": "^4.5.0"
+  },
+  "dependencies": {
+    "@sanity/vision": "^4.5.0"
+  }
+}

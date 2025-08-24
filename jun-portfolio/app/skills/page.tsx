@@ -8,32 +8,75 @@ const skills = [
   {
     id: 1,
     name: "Java",
-    level: "Junior",
+    level: "Graduate",
     icon: "https://cdn-icons-png.flaticon.com/512/226/226777.png", // Java icon
   },
   {
     id: 2,
     name: "JavaScript",
-    level: "Junior",
+    level: "Graduate",
     icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png", // JavaScript icon
   },
   {
     id: 3,
     name: "TypeScript",
-    level: "Junior",
+    level: "Graduate",
     icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png", // TypeScript icon
   },
   {
     id: 4,
     name: "MongoDB",
-    level: "Junior",
+    level: "Graduate",
     icon: "https://cdn-icons-png.flaticon.com/512/919/919836.png", // MongoDB icon
   },
   {
     id: 5,
     name: "React",
-    level: "Junior",
+    level: "Graduate",
     icon: "https://cdn-icons-png.flaticon.com/512/1126/1126012.png", // React icon
+    
+  },
+  {
+    id: 6,
+    name: "Next.js",
+    level: "Graduate",
+    icon: "https://cdn.worldvectorlogo.com/logos/next-js.svg", // React icon
+  },
+  {
+    id: 7,
+    name: "Redux Toolkit",
+    level: "Graduate",
+    icon: "https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png", // React icon
+  },
+  {
+    id: 8,
+    name: "Clerk",
+    level: "Graduate",
+    icon: "https://avatars.githubusercontent.com/u/103176540?s=200&v=4", // React icon
+  },
+  {
+    id: 9,
+    name: "Stripe",
+    level: "Graduate",
+    icon: "https://avatars.githubusercontent.com/u/856813?s=200&v=4", // React icon
+  },
+  {
+    id: 9,
+    name: "Express.js",
+    level: "Graduate",
+    icon: "https://cdn.worldvectorlogo.com/logos/express-109.svg", // React icon
+  },
+  {
+    id: 10,
+    name: "Node.js",
+    level: "Graduate",
+    icon: "https://nodejs.org/static/images/logo.svg", // React icon
+  },
+  {
+    id: 11,
+    name: "Aws",
+    level: "Graduate",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", // React icon
   },
 ];
 
